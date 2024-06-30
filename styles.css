@@ -1,0 +1,345 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000000; /* Black background */
+  color: #FFFFFF; /* White text */
+}
+
+/* Navbar Styles */
+#navbar {
+  background-color: black; /* Black background */
+  color: #FFFFFF; /* White text */
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Move right section 20px to the left */
+}
+
+.profile-picture {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-name {
+  font-size: 18px; /* Adjust size as needed */
+  vertical-align: 10px;
+}
+
+#nav-toggle {
+  background: none;
+  border: none;
+  color: #FFFFFF; /* White icon color */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#navbar ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li {
+  margin: 0 10px;
+}
+
+#navbar ul li a {
+  color: #FFFFFF; /* White link color */
+  text-decoration: none;
+  font-size: 16px; /* Adjust size as needed */
+}
+
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+
+#landing {
+  background-color: rgb(1, 6, 37); /* Electric Blue background for landing section */
+  color: #FFFFFF; /* White text */
+  text-align: left;
+  padding: 100px 20px;
+}
+
+#about {
+  background-size: cover;
+  color: #FFFFFF; /* White text */
+  position: relative;
+  line-height: 30px;
+}
+
+#about h2, #about p {
+  position: relative;
+  z-index: 2;
+}
+
+#about::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for the about section */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Content Blocks */
+#experience .experience-block,
+#projects .project-card,
+#education .education-block {
+  background: #2B4B5A; /* Dark Blue background for content blocks */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Skills Section */
+#skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#skills ul li {
+  background: #E71D36; /* Fuchsia Pink color for skills items */
+  color: #FFFFFF; /* White text */
+  margin: 5px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+/* Contact Section */
+#contact ul {
+  list-style: none;
+  text-align: center;
+}
+
+#contact ul li {
+  margin: 10px 0;
+}
+
+/* Resume Section */
+#resume {
+  text-align: center;
+}
+
+/* Profile Icon */
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+/* Media Query for Small Screens */
+h1 {
+  color: black;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 150px;
+}
+
+@media (max-width: 767.98px) {
+  /* Styling for smaller screens */
+  h1 {
+    font-size: 80px;
+  }
+
+  #navbar nav ul {
+      flex-direction: column;
+      align-items: center;
+      display: none; /* Hide menu by default on small screens */
+  }
+
+  #nav-toggle {
+      display: block; /* Show toggle button on small screens */
+  }
+}
+
+.dynamic-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#changing-word {
+  color: #ff6347; /* Example color for the changing word */
+}
+
+.linkedin-logo {
+  width: 20px; /* Adjust size as needed */
+  height: auto;
+  margin-top: 20px;
+}
+
+#read-more-btn:hover, #contact-me-btn:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+#read-more-btn,#contact-me-btn{
+  background-color: black;
+  color: white;
+}
+
+.about-me{
+  font-size: 35px;
+  background-color: rgb(61, 71, 0);
+  padding: 20px;
+}
+
+.intro-me{
+  margin-bottom: 150px;
+}
+
+/*about section animation */
+#about {
+  padding: 20px;
+ /* background-color: #f0f0f0;*/
+  overflow: hidden; /* Ensure content outside the section is hidden */
+}
+
+.about-me, .intro-me {
+  opacity: 0; /* Start with elements hidden */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.about-me {
+  animation-name: slideFromTop;
+}
+
+.intro-me {
+  animation-name: slideFromLeft;
+}
+
+@keyframes slideFromTop {
+  from {
+      transform: translateY(-50px); /* Start position above */
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0); /* End position at normal position */
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+      transform: translateX(-100%); /* Start position to the left */
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0); /* End position at normal position */
+      opacity: 1;
+  }
+}
+
+/*landing page animation*/
+#landing {
+  padding: 20px;
+  
+  overflow: hidden; /* Ensure content outside the section is hidden */
+}
+
+.intro h1, .dynamic-text, .linkedin-logo, #read-more-btn, #contact-me-btn {
+  opacity: 0; /* Start with elements hidden */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* Animation for sliding from the left */
+.intro h1 {
+  animation-name: slideFromLeft;
+}
+
+/* Animation for sliding from the right */
+.dynamic-text {
+  animation-name: slideFromRight;
+}
+
+/* Animation for sliding from the left */
+.linkedin-logo {
+  animation-name: slideFromLeft;
+}
+
+/* Animation for sliding from the bottom */
+#read-more-btn, #contact-me-btn {
+  animation-name: slideFromBottom;
+}
+
+@keyframes slideFromLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
