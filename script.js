@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.addEventListener('resize', adjustNavbar);
   }
 });
-const words = ["dedicated-developer", "problem-solver", "passionate-coder", "enthusiast", "fast-learner"];
+const words = ["aspiring-data scientist", "problem-solver", "passionate-coder", "enthusiast", "fast-learner"];
 let currentIndex = 0;
 let letterIndex = 0;
 
